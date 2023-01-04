@@ -1,1 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Great+Vibes&family=Kaushan+Script&family=Noto+Sans:wght@400;500;700&family=Public+Sans:wght@100;200;300&display=swap");
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #b2b2b267;
+}
+
+/* For Navbar and items */
+nav {
+  background-color: #222326;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  color: #ff5757;
+}
+
+#brand {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+#musikk-logo {
+  width: 60px;
+}
+
+#musikk-word {
+  font-family: "Kaushan Script", cursive;
+  font-size: larger;
+  font-weight: 600;
+  padding: 0 5px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding: 2px 20px;
+}
+nav ul li {
+  padding: 0 10px;
+}
+
+#first-half {
+  font-family: "Noto Sans", sans-serif;
+}
+
+#input-search {
+  border-style: none;
+  height: 35px;
+  border-radius: 7px;
+  padding: 4px;
+  width: 200px;
+}
+
+#search-button {
+  height: 34px;
+  border-radius: 7px;
+  border-style: none;
+  width: 40px;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Navbar completed */
+
+/* Main content boxes */
+#container {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 16px 0;
+}
+
+#left-container {
+  height: 75vh;
+  background-color: rgb(0, 0, 0);
+  width: 60%;
+  border-radius: 12px;
+}
+
+#right-container {
+  height: 75vh;
+  background-color: black;
+  width: 30%;
+  border-radius: 12px;
+  visibility: hidden;
+}
+
+/* Footer and its components */
+
+#bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  background-color: #222326;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+}
+
+#progress-bar {
+  width: 70%;
+}
+
+#bottom-icons i {
+  padding: 5px 15px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* DOM Js Elements */
+
+#grabber{
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+/* #song-name{
+  padding: 13px 0;
+} */
+
+.h3SongName{
+  color: white;
+  margin: 3%;
+  cursor: pointer;
+  width: 40%;
+  height: auto;
+}
+.h3SongName:hover{
+  color: #ff5757;
+}

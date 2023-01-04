@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musikk</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav>
+      <ul id="first-half">
+        <li id="brand">
+          <img id="musikk-logo" src="./Components/musikk-logo.png" alt="logo" />
+          <span id="musikk-word">Musikk</span>
+        </li>
+        <li>Home</li>
+        <li>Playlist</li>
+      </ul>
+      <ul id="second-half">
+        <li>
+          <input type="text" id="input-search" placeholder="Search your song" />
+          <button id="search-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+
+    <div id="container">
+        <div id="left-container">
+            <div class="grabber">
+              <div id="song-name"></div>
+              <h5 class="artist-name"></h5>
+            </div>
+        </div>
+        <div id="right-container">
+
+        </div>
+    </div>
+
+
+    <div id="bottom">
+      <input type="range" name="range" id="progress-bar" min="0" max="100" />
+      <div id="bottom-icons">
+        <i class="fa-solid fa-backward-step" ></i>
+        <i class="fa-solid fa-circle-play" id="playButton"></i>
+        <i class="fa-solid fa-forward-step"></i>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/4926a4df42.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./App.js" type="module"></script>
+  </body>
+</html>
 
