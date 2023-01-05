@@ -1,138 +1,255 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Great+Vibes&family=Kaushan+Script&family=Noto+Sans:wght@400;500;700&family=Public+Sans:wght@100;200;300&display=swap");
 
+body {
+  background-color: #222326;
+}
+
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  background-color: #b2b2b267;
-}
-
-/* For Navbar and items */
 nav {
-  background-color: #222326;
-  height: 65px;
+  font-family: "Noto Sans", sans-serif;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  color: #ff5757;
-}
-
-#brand {
-  display: flex;
-  /* justify-content: center; */
-  align-items: center;
-}
-
-#musikk-logo {
-  width: 60px;
-}
-
-#musikk-word {
-  font-family: "Kaushan Script", cursive;
-  font-size: larger;
-  font-weight: 600;
-  padding: 0 5px;
+  width: 100%;
 }
 
 nav ul {
   display: flex;
   align-items: center;
   list-style-type: none;
-  padding: 2px 20px;
-}
-nav ul li {
-  padding: 0 10px;
+  height: 100px;
+  background-color: #222326;
+  font-weight: solid;
 }
 
-#first-half {
+nav ul li {
+  padding: 0 12px;
+}
+.brand img {
+  width: 60px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+.logo-name {
+  color: #ff5757;
+  font-size: 24px;
+  text-align: center;
+  font-family: "Kaushan Script", cursive;
+  cursor: pointer;
+}
+
+.link a {
+  color: white;
+  background-color: #222326;
+  opacity: 0.5;
+  text-decoration: none;
+  text-transform: capitalize;
+  padding: 10px 30px;
+  line-height: 80px;
+  transition: 0.5s;
+  font-size: 20px;
+  font-weight: solid;
+}
+
+.link a:hover {
+  opacity: 1;
+  color: #ff5757b0;
+}
+
+#rangeBar {
+  width: 98%;
+  height: 2px;
+  cursor: pointer;
+}
+.songbar {
+  padding: 5px;
+  background-color: #222326;
+  color: white;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+}
+#masterSongBar {
+  align-items: center;
+  margin: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-family: "Noto Sans", sans-serif;
 }
 
-#input-search {
-  border-style: none;
-  height: 35px;
-  border-radius: 7px;
-  padding: 4px;
-  width: 200px;
+.mid_btn {
+  display: inline-flex;
+  align-items: center;
 }
 
-#search-button {
-  height: 34px;
-  border-radius: 7px;
-  border-style: none;
-  width: 40px;
+.mid_btn i {
+  padding: 0 5px;
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.queue {
   background-color: white;
+}
+
+#id {
+  background-color: white;
+}
+
+.songInfo {
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  margin: 5px 0;
+}
+
+.masterSongName {
+  margin: 0 10px;
+}
+
+.songName {
   cursor: pointer;
 }
 
-/* Navbar completed */
+#Queue,
+.addtoqueue, #addToPlaylist {
+  background-color: #ff5757;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 15px;
+}
 
-/* Main content boxes */
-#container {
+#Queue:hover,
+.addtoqueue:hover {
+  background-color: #ff5757b9;
+}
+#addToPlaylist:hover {
+  background-color: #ff5757b9;
+}
+
+.queuedSong {
+  cursor: pointer;
+}
+
+.cont_nav {
   display: flex;
   justify-content: space-evenly;
-  padding: 16px 0;
+  align-items: center;
 }
-
-#left-container {
-  height: 75vh;
-  background-color: rgb(0, 0, 0);
-  width: 60%;
-  border-radius: 12px;
-}
-
-#right-container {
-  height: 75vh;
-  background-color: black;
-  width: 30%;
-  border-radius: 12px;
-  visibility: hidden;
-}
-
-/* Footer and its components */
-
-#bottom {
-  position: fixed;
-  left: 0;
-  bottom: 0px;
-  width: 100%;
-  background-color: #222326;
-  color: white;
-  text-align: center;
-  padding: 5px 0;
-}
-
-#progress-bar {
-  width: 70%;
-}
-
-#bottom-icons i {
-  padding: 5px 15px;
-  font-size: 40px;
-  cursor: pointer;
-}
-
-/* DOM Js Elements */
-
-#grabber{
-  color: white;
+#music_list {
   display: flex;
   flex-direction: column;
+  background-color: #ff5757;
+  color: white;
+  width: 30%;
+  min-width: 30%;
+  position: relative;
+  margin: 15px auto;
+  border-radius: 11px;
+  height: 70vh;
+  font-family: "Noto Sans", sans-serif;
+  max-height: 480px;
+  overflow-y: scroll;
+  /* width: 50%; */
+  padding: 1rem;
+}
+#music_list::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
 
-/* #song-name{
-  padding: 13px 0;
-} */
+#music_list::-moz-scrollbar {
+  width: 0;
+  background: transparent;
+}
 
-.h3SongName{
-  color: white;
-  margin: 3%;
+#music_list {
+  -ms-overflow-style: none;
+}
+
+.musicListDiv {
+  padding: 4px 1rem;
+}
+.musicListDiv h5 {
+  color: rgb(68, 64, 62);
+}
+.musicListDiv h3:hover {
   cursor: pointer;
-  width: 40%;
+}
+
+.shuffleon {
+  color: red;
+}
+.section-side {
+  display: flex;
+  flex-grow: 1;
+  background-color: #f8ede3;
   height: auto;
 }
-.h3SongName:hover{
-  color: #ff5757;
+.current-time,
+.total-duration,
+#masterSongName {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#progress-bar{
+  width: 100%;
+}
+
+#qd{
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 20px auto;
+  text-align: center;
+  background-color: #404258;
+  color: white;
+  height: 50%;
+  width: 20%;
+}
+#sd {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 20px auto;
+  text-align: center;
+  background-color: #6ECCAF;
+  color: black;
+  height: 50%;
+  width: 20%;
+}
+
+#searchsong {
+  background-color: white;
+  width: 240px;
+  height: 20px;
+  color: black;
+  font-size: medium;
+  font-weight: solid;
+  padding: 1rem;
+  border-radius: 4px;
+  border: none;
+}
+
+#searchsong:hover {
+  background-color: #f8ede3;
+  border-color: #251749;
 }
