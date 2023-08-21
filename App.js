@@ -32,7 +32,6 @@ const apiFetch = async () => {
   const an = document.getElementById("structure");
   // Putting data in music-list if not there
   music_list = data?.tracks;
-  console.log(music_list);
   data?.tracks?.forEach((item, index) => {
     const child = document.createElement("div");
     child.className = "musicListDiv";
@@ -55,7 +54,6 @@ const apiFetch = async () => {
     list.appendChild(child);
   });
   previewData = data.tracks[0].previewURL;
-  console.log(previewData);
 };
 
 //Audio play
@@ -94,7 +92,6 @@ const playandpause = () => {
 };
 apiFetch();
 
-console.log(previewData);
 
 // Updating time and coverting it into sec
 function setUpdate() {
@@ -265,7 +262,7 @@ const addToPlaylist = () => {
   const currentsong = music_list[track_index];
   if (localStorage) {
     let data = JSON.parse(localStorage.getItem("playlist"));
-    console.log(data, "data");
+    
     if (!data) {
       data = [];
     }
