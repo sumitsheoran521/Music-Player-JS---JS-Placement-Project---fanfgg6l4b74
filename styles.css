@@ -115,8 +115,11 @@ nav ul li {
   margin: 5px 0;
 }
 
-.masterSongName {
+#masterSongName {
   margin: 0 10px;
+
+  width: 350px;
+  border: 1px solid black;
 }
 
 .songName {
@@ -124,7 +127,8 @@ nav ul li {
 }
 
 #Queue,
-.addtoqueue, #addToPlaylist {
+.addtoqueue,
+#addToPlaylist {
   background-color: #ff5757;
   border: none;
   color: black;
@@ -186,6 +190,7 @@ nav ul li {
 
 .musicListDiv {
   padding: 4px 1rem;
+  border-bottom: 1px solid white;
 }
 .musicListDiv h5 {
   color: rgb(68, 64, 62);
@@ -210,11 +215,11 @@ nav ul li {
   font-weight: bold;
 }
 
-#progress-bar{
+#progress-bar {
   width: 100%;
 }
 
-#qd{
+#qd {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -231,7 +236,7 @@ nav ul li {
   border-radius: 10px;
   margin: 20px auto;
   text-align: center;
-  background-color: #6ECCAF;
+  background-color: #6eccaf;
   color: black;
   height: 50%;
   width: 20%;
@@ -252,4 +257,8 @@ nav ul li {
 #searchsong:hover {
   background-color: #f8ede3;
   border-color: #251749;
+}
+
+.songbar {
+  position: fixed;
 }

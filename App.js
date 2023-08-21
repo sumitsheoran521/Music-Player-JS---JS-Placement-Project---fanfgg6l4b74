@@ -22,11 +22,10 @@ let isplaying = false;
 let updateTimer;
 let track_index = 0;
 
-
 //fetching API
 const apiFetch = async () => {
   const result = await fetch(
-    "https://api.napster.com/v2.1/tracks/top?apikey=YTM3ODVhZDYtNTJhMC00ODUzLThjZjItOGZmMzJjMDliNmQ3"
+    "https://napi-v2-2-cloud-run-b3gtd5nmxq-uw.a.run.app/v2.2/tracks/top?apikey=NjU2OGRhMzItOTVmNS00M2I2LWE4YjYtMzAzY2Y4Y2FlNTJm"
   );
   const data = await result.json();
   const list = document.getElementById("music_list");
@@ -49,7 +48,7 @@ const apiFetch = async () => {
       track_index = index;
       now_playing.innerText = item.name;
       audioPlay(item.previewURL);
-    }; 
+    };
 
     // Injecting data to HTML by DOM
     an.appendChild(child);
@@ -58,7 +57,6 @@ const apiFetch = async () => {
   previewData = data.tracks[0].previewURL;
   console.log(previewData);
 };
-
 
 //Audio play
 const audioPlay = async (url) => {
@@ -96,9 +94,7 @@ const playandpause = () => {
 };
 apiFetch();
 
-
 console.log(previewData);
-
 
 // Updating time and coverting it into sec
 function setUpdate() {
@@ -169,8 +165,8 @@ previous.onclick = prevTrack;
 shuffle.onclick = () => {
   isRandom = !isRandom;
   shuffle.className = isRandom
-  // setting shuffleon class to apply CSS
-    ? "fa-solid fa-1x fa-shuffle shuffleon"
+    ? // setting shuffleon class to apply CSS
+      "fa-solid fa-1x fa-shuffle shuffleon"
     : "fa-solid fa-1x fa-shuffle";
   let random_index = Number.parseInt(Math.random() * music_list.length);
 
@@ -182,15 +178,12 @@ shuffle.onclick = () => {
 
 // Update Seekbar
 player.addEventListener("timeupdate", () => {
-  let progress = parseInt(
-    (player.currentTime / player.duration) * 100
-  );
+  let progress = parseInt((player.currentTime / player.duration) * 100);
   myProgressBar.value = progress;
 });
 
 myProgressBar.addEventListener("change", () => {
-  player.currentTime =
-    (myProgressBar.value * player.duration) / 100;
+  player.currentTime = (myProgressBar.value * player.duration) / 100;
 });
 
 // add to queue
